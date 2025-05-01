@@ -21,6 +21,7 @@ app.get("/a",async(req,res)=>{
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
+    console.log(`Server is running on port ${PORT}`);
     await mongoose.connect(process.env.MONGODB_URI, {})
         .then(() => console.log('✅ MongoDB Atlas connected'))
         .catch((err) => console.error('❌ MongoDB connection error:', err));
